@@ -1,10 +1,21 @@
 class Baraja
-    def initialize(cartas)
-        if cartas.is_a?(Array)
-            @cartas = cartas
-        else
-            raise ArgumentError.new("#{cartas} is not an array type")
+    attr_accessor :cartas
+    def initialize()
+        @cartas = []
+        pintas = ['C','D','E','T'] 
+        for i in 1..13
+            pintas.each {|pinta| self.cartas.push(Carta.new(i,pinta))}
         end
-        
     end
+
+    def barajar()
+        #desordenamos la baraja de cartas
+        self.cartas = self.cartas.shuffle
+    end
+    
+    def sacar()
+        #con reverse invertimos el orden del arreglo y asi podemos sacar el primer elemento con .pop
+        self.cartas.reverse.pop
+    end
+
 end
