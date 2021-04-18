@@ -20,4 +20,10 @@ class Baraja
         return carta_sacada
     end
 
+    def repartir()
+        repartidas = self.cartas.first(5)
+        5.times {self.cartas.shift}
+        return repartidas
+    end
+    
 end
