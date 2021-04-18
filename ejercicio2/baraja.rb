@@ -15,7 +15,9 @@ class Baraja
     
     def sacar()
         #con reverse invertimos el orden del arreglo y asi podemos sacar el primer elemento con .pop
-        self.cartas.reverse.pop
+        carta_sacada = self.cartas.reverse.pop
+        self.cartas.shift
+        return carta_sacada
     end
 
 end
