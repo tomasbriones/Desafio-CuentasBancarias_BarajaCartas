@@ -3,6 +3,7 @@ class Baraja
     def initialize()
         @cartas = []
         pintas = ['C','D','E','T'] 
+        #se pide crear todas las combinaciones de numero y pinta en el initialize
         for i in 1..13
             pintas.each {|pinta| self.cartas.push(Carta.new(i,pinta))}
         end
@@ -21,6 +22,7 @@ class Baraja
     end
 
     def repartir()
+        #con first sacamos las primeras 5 cartas y con shift eliminamos las cartas repartidas de la baraja
         repartidas = self.cartas.first(5)
         5.times {self.cartas.shift}
         return repartidas
